@@ -9,7 +9,7 @@
     height: 100%;
     border-radius: 25px;
     object-fit: cover;
-    filter : brightness(70%);
+    filter : brightness(50%);
 }
 
 /* CSS only Banner component in Home page */
@@ -64,8 +64,3 @@
         padding-bottom: 19px;
     }
 }
-    
-
-
-
-

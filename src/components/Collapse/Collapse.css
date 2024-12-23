@@ -1,6 +1,9 @@
-/* CSS general for Collapse component */
+/* CSS général pour le composant Collapse */
+
 .collapse-drop-down-list {
-    background-color: #f7f7f7;
+    background-color: transparent; /* Fond caché au départ */
+    overflow: hidden; /* Empêche le débordement du contenu caché */
+    transition: background-color 0.5s ease-in-out; /* Transition de la couleur de fond */
 }
 
 .collapse-drop-down-list h3 {
@@ -10,7 +13,7 @@
     align-items: center;
     border: 1px solid #FF6060;
     background-color: #FF6060;
-    padding-left:  20px;
+    padding-left: 20px;
     font-weight: 500;
     color: #FFFFFF;
 }
@@ -26,126 +29,178 @@
 
 .content-in-collapse {
     font-weight: 400;
-    color: #FF6060;
+    color: #000000;
+    overflow: hidden; /* Cache tout contenu qui dépasse */
+    max-height: 0; /* Par défaut, on définit une hauteur de 0 pour cacher le contenu */
+    opacity: 0; /* Rendre le contenu invisible au départ */
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transition sur la hauteur et l'opacité */
 }
 
+/* Quand l'élément collapse est ouvert */
+.collapse-drop-down-list.open {
+    background-color: #f7f7f7; /* La couleur de fond s'affiche quand ouvert */
+}
+
+.collapse-drop-down-list.open .content-in-collapse {
+    max-height: 500px; /* Une valeur suffisamment grande pour que tout le contenu soit visible */
+    opacity: 1; /* Rendre le contenu visible */
+}
+
+/* Transition de l'élément .arrow pour un effet fluide */
 .arrow {
     transition: all 0.2s ease-in-out;
 }
 
+/* Rotation de l'élément .arrow-to-open à 0 degrés (position initiale) */
 .arrow-to-open {
     transform: rotate(0deg);
 }
 
+/* Rotation de l'élément .arrow-to-close à 180 degrés (pour l'animation de fermeture) */
 .arrow-to-close {
     transform: rotate(180deg);
 }
 
-/* CSS only Collapse component in About page */
+/* Composant Collapse uniquement en CSS sur la page "À propos" */
+
+/* Liste déroulante avec marges sur la page "À propos" */
 .style-collapse-in-about-page .collapse-drop-down-list {
-    margin: 30px 110px 0 110px;
+    margin: 30px 110px 0 110px; /* Marge en haut, à droite et à gauche */
 }
 
+/* Définition du rayon des bordures pour les titres et les listes déroulantes */
 .style-collapse-in-about-page h3, .style-collapse-in-about-page .collapse-drop-down-list {
     border-radius: 5px;
 }
 
+/* Style pour le titre et le contenu dans le composant Collapse sur la page "À propos" */
 .style-collapse-in-about-page h3, .style-collapse-in-about-page .content-in-collapse {
-    font-size: 24px;
-    line-height: 34px;
-    
+    font-size: 24px; /* Taille de police */
+    line-height: 34px; /* Hauteur de ligne */
 }
 
+/* Espacement à droite du titre h3 sur la page "À propos" */
 .style-collapse-in-about-page h3 {
     padding-right: 33px;
 }
 
+/* Espacement des images dans le composant Collapse sur la page "À propos" */
 .style-collapse-in-about-page img {
-    padding: 16px 0;
+    padding: 16px 0; /* Espacement vertical */
 }
 
+/* Espacement du contenu dans le composant Collapse sur la page "À propos" */
 .style-collapse-in-about-page .content-in-collapse {
-    padding: 27px 27px 20px 20px;
+    padding: 27px 27px 20px 20px; /* Espacement interne du contenu */
 }
 
-/* CSS only Collapse component in Lodging page */
+/* Composant Collapse uniquement en CSS sur la page "Accueil" */
+
+/* Disposition en ligne (flexbox) sur la page "Accueil" */
 .style-collapse-in-lodging-page  {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: row; /* Alignement horizontal */
+    justify-content: space-between; /* Espacement égal entre les éléments */
 }
 
+/* Conteneur de l'élément Collapse avec une largeur de 47% */
 .style-collapse-in-lodging-page .collapse-in-lodging {
-    margin: 0;
-    width: 47%;
+    margin: 0; /* Pas de marge */
+    width: 47%; /* Largeur à 47% de son parent */
 }
 
+/* Définition du rayon des bordures pour les titres et les listes déroulantes sur la page "Accueil" */
 .style-collapse-in-lodging-page h3, .style-collapse-in-lodging-page .collapse-drop-down-list {
     border-radius: 10px;
 }
 
+/* Style pour le titre et le contenu dans le composant Collapse sur la page "Accueil" */
 .style-collapse-in-lodging-page h3, .style-collapse-in-lodging-page .content-in-collapse {
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 18px; /* Taille de police */
+    line-height: 25px; /* Hauteur de ligne */
 }
 
+/* Espacement à droite du titre h3 sur la page "Accueil" */
 .style-collapse-in-lodging-page h3 {
     padding-right: 13px;
 }
 
+/* Espacement des images dans le composant Collapse sur la page "Accueil" */
 .style-collapse-in-lodging-page img {
-    padding: 18px 0 19px 0;
+    padding: 18px 0 19px 0; /* Espacement vertical */
 }
 
+/* Espacement du contenu dans le composant Collapse sur la page "Accueil" */
 .style-collapse-in-lodging-page .content-in-collapse {
-    min-height: 249px;
-    padding: 30px 12px 0 20px;
+    min-height: 249px; /* Hauteur minimale du contenu */
+    padding: 30px 12px 0 20px; /* Espacement interne */
 }
 
+/* Classe pour afficher les équipements */
 .details-equipments {
-    padding-bottom: 5px;
+    padding-bottom: 5px; /* Espacement en bas des équipements */
 }
 
-/* Responsive mobile */
+/* Style responsive pour les écrans mobiles */
 @media screen and (max-width: 767px) {
+    /* Réduction de la taille des images dans la liste déroulante */
     .collapse-drop-down-list img {
-        height: 7px;
-        width: 13px;
+        height: 7px; /* Hauteur de l'image */
+        width: 13px; /* Largeur de l'image */
     }
+
+    /* Espacement du titre h3 dans la liste déroulante */
     .collapse-drop-down-list h3 {
-        padding-left: 11px;
+        padding-left: 11px; /* Espacement à gauche */
     }
+
+    /* Style des titres h3 sur les pages "À propos" et "Accueil" */
     .style-collapse-in-about-page h3, .style-collapse-in-lodging-page h3 {
-        font-size: 13px;
-        line-height: 18px;
-        padding-right: 7px;
+        font-size: 13px; /* Taille de police réduite */
+        line-height: 18px; /* Hauteur de ligne réduite */
+        padding-right: 7px; /* Espacement réduit à droite */
     }
+
+    /* Style du contenu dans le composant Collapse sur les pages "À propos" et "Accueil" */
     .style-collapse-in-about-page .content-in-collapse, .style-collapse-in-lodging-page .content-in-collapse {
-        font-size: 12px;
-        line-height: 17px;
+        font-size: 12px; /* Taille de police réduite */
+        line-height: 17px; /* Hauteur de ligne réduite */
     }
+
+    /* Espacement des listes déroulantes sur les pages "À propos" et "Accueil" */
     .style-collapse-in-about-page .collapse-drop-down-list, .style-collapse-in-lodging-page .collapse-drop-down-list {
-        margin: 0 0 20px 0;
+        margin: 0 0 20px 0; /* Marge inférieure */
     }
+
+    /* Espacement des images sur les pages "À propos" et "Accueil" */
     .style-collapse-in-about-page img, .style-collapse-in-lodging-page img {
-        padding: 10px 0 11px 0;
+        padding: 10px 0 11px 0; /* Espacement réduit verticalement */
     }
+
+    /* Espacement du contenu dans le composant Collapse sur la page "À propos" */
     .style-collapse-in-about-page .content-in-collapse {
-        padding: 17px 7px 53px 11px;
+        padding: 17px 7px 53px 11px; /* Espacement modifié */
     }
+
+    /* Disposition en colonne (flexbox) sur la page "Accueil" pour les petits écrans */
     .style-collapse-in-lodging-page  {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Disposition verticale */
     }
+
+    /* Réduction du rayon des bordures sur la page "Accueil" pour les petits écrans */
     .style-collapse-in-lodging-page h3, .style-collapse-in-lodging-page .collapse-drop-down-list {
         border-radius: 5px;
     }
+
+    /* Style du contenu sur la page "Accueil" pour les petits écrans */
     .style-collapse-in-lodging-page .content-in-collapse {
-        min-height: 144px;
-        padding: 17px 7px 0 11px;
+        min-height: 144px; /* Hauteur minimale réduite */
+        padding: 17px 7px 0 11px; /* Espacement modifié */
     }
+
+    /* Largeur complète pour les éléments Collapse sur la page "Accueil" */
     .style-collapse-in-lodging-page .collapse-in-lodging {
-        width: 100%;
+        width: 100%; /* Largeur pleine */
     }
 }
-

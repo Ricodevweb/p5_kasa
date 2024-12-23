@@ -1,74 +1,80 @@
-.cards-in-home-page  {
-   width: 28.5%;
-   height: 340px;
-   padding-bottom: 50px;
+/* Style général des cartes sur la page d'accueil */
+.cards-in-home-page {
+   width: 28.5%; /* Définit la largeur de la carte, 28.5% de l'espace disponible */
+   height: 340px; /* Hauteur fixe des cartes */
+   padding-bottom: 50px; /* Espace ajouté en bas de chaque carte */
 }
- 
+
+/* Style des liens à l'intérieur des cartes */
 .cards-in-home-page a {
-    position: relative;
+    position: relative; /* Permet de positionner les éléments enfants de manière absolue par rapport à cet élément */
 }
 
+/* Style des images à l'intérieur des cartes */
 .cards-in-home-page img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 100%; /* L'image prend toute la largeur de la carte */
+    height: 100%; /* L'image prend toute la hauteur de la carte */
+    object-fit: cover; /* L'image s'ajuste pour couvrir l'espace sans être déformée */
+    border-radius: 10px; /* Bords arrondis sur l'image */
 }
 
+/* Style de la superposition (overlay) sur chaque carte */
 .overlay {
-    width: 100%;
-    height: 340px;
-    position: absolute;
+    width: 100%; /* La superposition prend toute la largeur de la carte */
+    height: 340px; /* Hauteur de la superposition (identique à celle de la carte) */
+    position: absolute; /* Position absolue pour la superposition à l'intérieur de la carte */
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
-    border-radius: 10px;
+    /* Dégradé du fond de la superposition, allant du transparent au noir avec opacité */
+    border-radius: 10px; /* Bord arrondi pour la superposition */
 }
 
+/* Style des titres des cartes */
 .cards-in-home-page h3 {
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
-    position: absolute;
-    color: #FFFFFF;
-    bottom: 10px;
-    left: 15px;
-    right: 15px;
+    text-decoration: none; /* Aucune décoration de texte (pas de souligné) */
+    font-weight: 500; /* Poids de la police (moyen) */
+    font-size: 18px; /* Taille de la police */
+    line-height: 25px; /* Hauteur de ligne pour l'espacement entre les lignes */
+    position: absolute; /* Positionnement absolu du titre dans la carte */
+    color: #FFFFFF; /* Couleur du texte (blanc) */
+    bottom: 10px; /* Position du titre à 10px du bas de la carte */
+    left: 15px; /* Position du titre à 15px du côté gauche de la carte */
+    right: 15px; /* Position du titre à 15px du côté droit de la carte */
 }
 
-/* Breakpoint */
+/* Breakpoint pour les écrans plus petits (max-width: 1200px) */
 @media screen and (max-width: 1200px) {
     .cards-in-home-page {
-        width: 30.5%;
+        width: 30.5%; /* Les cartes prennent plus de largeur sur les écrans plus petits */
     }
     .cards-in-home-page h3 {
-        right: 5px;
+        right: 5px; /* Décalage du titre vers la droite */
     }
 }
 
-/* Responsive tablet */
+/* Breakpoint pour les tablettes (max-width: 991px) */
 @media screen and (max-width: 991px) {
     .cards-in-home-page {
-        width: 32%;
-        padding-bottom: 10px;
+        width: 32%; /* Les cartes occupent une largeur de 32% de l'espace disponible */
+        padding-bottom: 10px; /* Réduit l'espace en bas des cartes */
     }
     .cards-in-home-page h3 {
-        left: 10px;
-        font-size: 16px;
+        left: 10px; /* Décalage du titre vers la gauche */
+        font-size: 16px; /* Réduction de la taille de la police */
     }
 }
 
-/* Responsive mobile */
+/* Breakpoint pour les mobiles (max-width: 767px) */
 @media screen and (max-width: 767px) {
     .cards-in-home-page {
-        width: 100%;
-        height: 255px;
-        padding-bottom: 20px;
+        width: 100%; /* Les cartes occupent 100% de la largeur */
+        height: 255px; /* Hauteur réduite des cartes */
+        padding-bottom: 20px; /* Réduit l'espace en bas des cartes */
     }
     .overlay {
-        height: 255px;
+        height: 255px; /* Hauteur de la superposition ajustée à celle de la carte sur mobile */
     }
     .cards-in-home-page h3 {
-        left: 15px;
-        font-size: 18px;
+        left: 15px; /* Décalage du titre vers la gauche */
+        font-size: 18px; /* Taille du texte légèrement augmentée pour les mobiles */
     }
 }
