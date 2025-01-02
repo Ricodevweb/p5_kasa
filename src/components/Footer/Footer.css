@@ -2,12 +2,13 @@
     width: auto;
     height: 209px;
     background-color: #000000;
-    margin-top: 170px;
+    /*margin-top: 170px;*/
+    margin-top: 5rem;
 }
 
 .footer-style div {
     display: flex;
-    justify-content: center;  
+    justify-content: center;
 }
 
 .footer-style img {

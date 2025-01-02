@@ -1,5 +1,9 @@
 /* CSS général pour le composant Collapse */
 
+.close {
+    display: none;
+}
+
 .collapse-drop-down-list {
     background-color: transparent; /* Fond caché au départ */
     overflow: hidden; /* Empêche le débordement du contenu caché */
@@ -132,7 +136,7 @@
 
 /* Espacement du contenu dans le composant Collapse sur la page "Accueil" */
 .style-collapse-in-lodging-page .content-in-collapse {
-    min-height: 249px; /* Hauteur minimale du contenu */
+    /*min-height: 249px; /* Hauteur minimale du contenu */
     padding: 30px 12px 0 20px; /* Espacement interne */
 }
 
@@ -195,7 +199,7 @@
 
     /* Style du contenu sur la page "Accueil" pour les petits écrans */
     .style-collapse-in-lodging-page .content-in-collapse {
-        min-height: 144px; /* Hauteur minimale réduite */
+        /*min-height: 144px; /* Hauteur minimale réduite */
         padding: 17px 7px 0 11px; /* Espacement modifié */
     }
 
@@ -203,4 +207,17 @@
     .style-collapse-in-lodging-page .collapse-in-lodging {
         width: 100%; /* Largeur pleine */
     }
+}
+
+.content-in-collapse {
+    font-weight: 400;
+    color: #000000;
+    overflow: hidden; /* Cache le contenu hors de la zone visible */
+    max-height: 0; /* Hauteur initiale 0 pour cacher le contenu */
+    opacity: 0; /* Rendre invisible */
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Transition sur hauteur et opacité */
+}
+.collapse-drop-down-list.open .content-in-collapse {
+    max-height: 500px; /* Hauteur suffisante pour tout le contenu */
+    opacity: 1; /* Afficher le contenu */
 }
